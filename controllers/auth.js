@@ -28,22 +28,27 @@ const bookMakeupSession = async (req, res) => {
 
     const get_latest = await BookedOrder.find({date}).sort({ createdAt: -1 });
 
-    let time_split = time.split(" ")[0];
-    let time_str = time_split.split(":")[0];
-    let time_number = Number(time_str);
-
-    let time_latest = get_latest[0].time.split(" ")[0];
-    let time_latest_str = time_latest.split(":")[0];
-    let time_latest_number = Number(time_latest_str);
-
-    if(time_latest_number - time_number < 4){
-        console.log(time_latest_number - time_number);
-        
-        return res.status(400).json({
-            success:false,
-            msg:`WE ARE WORKING ON A MAKEUP SESSION FOR THIS TIME ,  YOU CAN SPECIFY A TIME 4 HOURSE FROM NOW OR YOU CAN BOOK FOR ANOTHER DAY!`
-        })
+    if(get_latest.length > 0){
+        let time_split = time.split(" ")[0];
+        let time_str = time_split.split(":")[0];
+        let time_number = Number(time_str);
+    
+        let time_latest = get_latest[0].time.split(" ")[0];
+        let time_latest_str = time_latest.split(":")[0];
+        let time_latest_number = Number(time_latest_str);
+    
+        if(time_latest_number - time_number < 4){
+            console.log(time_latest_number - time_number);
+            
+            return res.status(400).json({
+                success:false,
+                msg:`WE ARE WORKING ON A MAKEUP SESSION FOR THIS TIME ,  YOU CAN SPECIFY A TIME 4 HOURSE FROM NOW OR YOU CAN BOOK FOR ANOTHER DAY!`
+            })
+        }
     }
+    
+
+   
     
 
     if(check_date.length === 1){
