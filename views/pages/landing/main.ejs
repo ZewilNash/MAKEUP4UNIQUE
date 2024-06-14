@@ -1,0 +1,125 @@
+<div class="modal fade" id="sessions" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 data-lang="land_30" class="modal-title" id="exampleModalLabel">YOUR MAKEUP SESSIONS YOU BOOKED</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div style="display: flex;justify-content: center;align-items: center;padding: 20px;flex-direction: column;width: 100%;height: auto;overflow-y: scroll;"
+                class="modal-body">
+
+                <% if(sessions.length === 0) { %>
+                <h1 data-lang="land_31" style="text-align: center;">NO BOOKED MAKEUP SESSIONS FOUND FOR YOU!</h1>
+                <% } else { %>
+
+                  <% for(let i = 0; i < sessions.length; i++) { %>
+                    <div style="display: flex;justify-content: center;align-items: center;text-align: center;flex-direction: column;gap: 10px;padding: 10px;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                        <p><p data-lang="land_32">MAKEUP SESSION OCCASION: </p> <%= sessions[i].occasion  %></p>
+                        <p><p data-lang="land_33">MAKEUP SESSION  DATE :</p>  <%= sessions[i].date  %></p>
+                        <p><p data-lang="land_34">MAKEUP SESSION  TIME :</p>  <%= sessions[i].time  %></p>
+                        <p><p data-lang="land_35">MAKEUP SESSION  PLACE :</p>  <%= sessions[i].session_place  %></p>
+                    </div>
+                <% } %>
+
+                <% } %>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container main hide">
+    <div
+        style="width: 100vw;display: flex;justify-content: space-around;margin-top: 20px;margin-bottom: 20px;flex-direction: row;padding: 20px;">
+        <select
+            style="outline: none;border: none;padding: 10px;display: flex;background-color: #000;color: #fff;font-size: 18px;"
+            id="country-select">
+            <option value="en">bahasa inggris</option>
+            <option value="in">bahasa Indonesia</option>
+        </select>
+        <a data-bs-toggle="modal" data-bs-target="#sessions" href="#"
+            style="text-align: center;color: #A493C0;font-weight: bolder;cursor: pointer;" data-lang="land_1">YOUR
+            BOOKED MAKEUP SESSIONS</a>
+    </div>
+    <!-- <div class="row" style="display: flex;flex-direction: column;gap: 20px;width: 100vw;height: auto;overflow-y: scroll;justify-content: center;"> -->
+    <div
+        style="display: flex;flex-direction: column;justify-content: center;align-items: center;gap: 4px;margin-bottom: 20px;">
+        <img class="main-image" src="./landing/images/makeup4unique.png" alt="">
+        <h1 class="mt-4" style="color: #A493C0;" data-lang="land_2">OUR CONTACTS</h1>
+        <p style="text-align: center;color: #A493C0;" data-lang="land_3">WHATSAPP</p>
+        <a href="https://wa.me/082131727011" target="_blank"
+            style="text-align: center;font-weight: bold;color: #A493C0;">082131727011</a>
+
+        <h1 data-lang="land_4" style="text-align: center;color: #A493C0;margin-top: 10px;">OUR LOCATION:</h1>
+
+        <p style="text-align: center;color: #A493C0;font-weight: bolder;font-size: 25px;"> Jalan Lidah Wetan Gang V No.
+            43, RT 04 RW 02, Lidah Wetan, Lakarsantri, Surabaya, East Java, Java, 60213, Indonesia</p>
+
+    </div>
+    <form action=""
+        style="text-align: center;margin-top: 70px;color: #A493C0;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;padding: 20px;font-weight: bold;display: flex;flex-direction: column;gap: 20px;">
+        <h1 data-lang="land_5" style="text-align: center;">JUST LITTLE MAGIC TOUCH IS WAITING..</h1>
+        <small data-lang="land_6" style="text-align: center;">IF YOU HAVE (PER WEDDING , GRADUATION , PARTY, DATE ,
+            ETC..)</small>
+        <small style="text-align: center;" data-lang="land_7">OR IF YOU WANT TO SURPRISE YOUR PARTNER , WE GOT
+            YOU</small>
+        <small data-lang="land_8">WE WILL MAKE YOU BLOOM BEAUTY, EVERYWHERE YOU GO</small>
+
+        <h1 data-lang="land_9" style="color:#A493C0;margin-top: 10px;">BOOK FOR YOUR MAKEUP SESSION BELOW:</h1>
+
+        <label data-lang="land_10" for="" style="color:#A493C0;margin-top: 10px;">YOUR NAME</label>
+        <input type="text" id="name" style="padding: 10px;outline: none;">
+        <label data-lang="land_11" for="" style="color:#A493C0;margin-top: 10px;">YOUR PHONE</label>
+        <input type="tel" id="phone" style="padding: 10px;outline: none;">
+
+        <label data-lang="land_12" for="" style="color:#A493C0;margin-top: 10px;">WHAT'S THE OCCASION?</label>
+        <select name="" id="occasion" style="color: #A493C0;padding: 10px;outline: none;">
+            <!-- what's the occasion -->
+            <option data-lang="land_13" value="pre-wedding(300k)">pre-wedding (300k)</option>
+            <option data-lang="land_14" value="engagement(250k)">engagement (250k)</option>
+            <option data-lang="land_15" value="graduation(200k)">graduation (200k)</option>
+            <option data-lang="land_16" value="photoshoot(200k)">photoshoot (200k)</option>
+            <option value="party(200k)" data-lang="land_17">party (200k)</option>
+            <option data-lang="land_18" value="meeting(200k)">meeting (200k)</option>
+            <option data-lang="land_19" value="date(200k)">date (200k)</option>
+        </select>
+
+        <label data-lang="land_20" for="" style="color:#A493C0;margin-top: 10px;">WHERE YOU LIKE TO START YOUR MAKEUP
+            SESSION?</label>
+        <select name="" id="place" style="color: #A493C0;padding: 10px;outline: none;">
+            <!-- what's the occasion -->
+            <option data-lang="land_21" value="our place">our place</option>
+            <option data-lang="land_22" value="your place">your place</option>
+        </select>
+
+        <p id="my_address" style="color: #A493C0;font-weight: bold;">Jalan Lidah Wetan Gang V No. 43, RT 04 RW 02, Lidah
+            Wetan, Lakarsantri, Surabaya, East Java, Java, 60213, Indonesia
+        </p>
+
+        <label data-lang="land_23" id="address_label" for="" style="color:#A493C0;margin-top: 10px;">YOUR
+            ADDRESS</label>
+        <input type="text" id="address" style="padding: 10px;outline: none;">
+        <small data-lang="land_24" id="address_note">EXTRA MONEY WILL BE ADDED TO THE PRICE (IT'S NEGOTIABLE)</small>
+
+        <label data-lang="land_25" for="" style="color:#A493C0;margin-top: 10px;">PICK THE DAY FOR YOUR MAKEUP
+            SESSION?</label>
+        <input type="date" id="date" style="padding: 10px;outline: none;">
+
+        <label data-lang="land_26" for="" style="color:#A493C0;margin-top: 10px;">PICK THE TIME FOR YOUR MAKEUP
+            SESSION?</label>
+        <input type="time" id="time" style="padding: 10px;outline: none;">
+
+        <button id="book_session" data-lang="land_27"
+            style="background-color: #A493C0;color: #fff;padding: 10px;outline: none;border: none;">BOOK NOW</button>
+
+        <small data-lang="land_28">WE WILL CALL YOU FOR YOUR MAKEUP SESSION ON THE DATE YOU CHOOSE</small>
+        <small data-lang="land_29">PLEASE MAKE SURE YOU PROVIDE THE CORRECT PHONE NUMBER</small>
+
+    </form>
+    <!-- </div> -->
+    <div id="success" style="position: absolute;top: 0;left: 50%;transform: translateX(-50%);"></div>
+
+
+</div>
